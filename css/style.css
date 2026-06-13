@@ -384,6 +384,58 @@ input , textarea{
     font-size: 16px;
 }
 
+/* section about */
+#about{
+    font-weight: 300;
+    font-size: 23px;
+}
+#Valeur{
+     font-weight: 300;
+    font-size: 23px;
+}
+.cle{
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.bento-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.bento-item{
+    background-color: #51708f;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid;
+    /* transition fluide essentielle pour l'effet hover */
+    transition: transform 0.4s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    box-shadow: 0.4s ease;
+    /* cursor definit la forme du curseur lorsque le pointeur est au dessus de l'element */
+    cursor: pointer;  
+}
+.bento-item:hover{
+    transform: rotateX('angle');
+    box-shadow: 0 20px 40px rgba(79,70, 229, 0.12);
+    border-color: #444;
+}
+
+.stat-number{
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.stat-label{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
 /* information de contact */
 #contact2{
     margin-top: 40px;
@@ -450,6 +502,9 @@ a{
     font-size: 20px;
     
 }
+
+/* commit 5 */
+
 /* mobile 375px */
 @media(max-width:575px){
     /* navbar:hamburger fonctionnel */
@@ -474,6 +529,9 @@ a{
     }
     /* bento grid:1colonne */
     .bento{
+        grid-template-columns: 1fr;
+    }
+    .bento-grid{
         grid-template-columns: 1fr;
     }
      /* temoignage*/
@@ -531,6 +589,8 @@ a{
     }
    
 }
+/* commit 6 */
+
 /* mode sombre */
 [data-theme="dark"] body {
     background-color: var(--footer-color);
@@ -582,4 +642,14 @@ a{
     visibility: visible;
 }
 
+/* commit7 */
+.fade-in-section{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
 

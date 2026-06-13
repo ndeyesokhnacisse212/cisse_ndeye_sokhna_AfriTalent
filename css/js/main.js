@@ -62,4 +62,73 @@ backToTopBtn.addEventListener('click', ()  =>{
     })
 
 } );
+
+// commit 7
+
+// on attend que la page html  soit completement chargee avant de lancer le script
+document.addEventListener("DOMContentLoaded",  ()  =>{
+
+    // selection de tous les elements qui ont la class statistique
+    const counters = document.querySelectorAll('.statistique');
+
+    // plus le chiffre est grand plus l'animation est lente
+    const speed = 1500;
+
+    // fonction principal qui va animer le chiffre du compteur 
+    const animateCounter = (counter) => {
+        const value= +counter.getAttribute('data-target');
+        const data= +counter.innerText;
+        const time= value / speed;
+        if (data< value ) {
+
+            // arrondit au superieur et ajoute la valeur calculée
+            counter.innerText= Math.ceil(data + time);
+
+            // settimeout permet de definir un minuteur qui execute une fonction donné apres la fin du delai indiqué
+            setTimeout(()  => animateCounter(counter), 1);
+        }else{
+            counter.innerText= value
+        }
+    };
+
+    // intersection observer permet d'observer de maniere asynchrone l'evolution de l'intersection d'un element
+    const observer= new IntersectionObserver((entries, observer)=>{
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                const counter= entry.target;
+                animateCounter(counter)
+                observer.unobserve(counter)
+            }
+        });
+    }, {
+        // la fonction sera declenchée lorsque 20% de l'element sera visible à l'ecran
+        threshold:0.2
+    });
+
+    // parcourir
+    counters.forEach(counter => observer.observe(counter));
+
+    // section de tous les sections à animer
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+
+    // creation de l'observateur pour les sections
+    const fadeObserver= new IntersectionObserver((entries,fadeObserver)=>{
+        entries.forEach(entry =>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+        
+    } ,{
+        // declenche des le debut de l'apparition
+        threshold:0.1
+    });
+
+    // lancer l'observation sur chaque section
+    fadeSections.forEach(section =>{
+        fadeObserver.observe(section);
+    })
+});
+
                     
