@@ -361,6 +361,7 @@ h4{
 }
 
 /* section contact */
+/* formulaire */
 #container{
     width: 90%;
     margin: 50px;
@@ -652,4 +653,33 @@ a{
     opacity: 1;
     transform: translateY(0);
 }
+.error{
+    color: red;
+    font-size: 0.9em;
+}
+.sucess{
+    color: green;
+    font-size: 1.1em;
+}
 
+/* filtrage */;
+/* boutons de filtrage */
+.fil{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+.filter-btn{
+    padding: 8px 14px;
+    border: 1px solid;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2q;
+}
+.filter-btn.active, .filter-btn:hover{
+    background: #828fd9;
+    color: white;
+    border-color: #0026FF;
+
+}

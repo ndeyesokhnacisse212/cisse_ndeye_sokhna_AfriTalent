@@ -1,3 +1,4 @@
+// 
 // recupere le bouton html de la navbar grace à son id theme-toggle
 const toggleBtn = document.getElementById('theme-toggle');
 
@@ -130,5 +131,82 @@ document.addEventListener("DOMContentLoaded",  ()  =>{
         fadeObserver.observe(section);
     })
 });
+// commit8
 
-                    
+// FILTRAGE PAR CATEGORIE
+ document.addEventListener('DOMContentLoaded', () =>{
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    buttons.forEach(button =>{
+        button.addEventListener('click', () =>{
+            // recuperr la categorie du bouton clique
+            const target = button.getAttribute('data-target');
+            // filtre les cartes de freelances
+            cards.forEach(card =>{
+                const category = card.getAttribute('data-category');
+                if(target === 'all' || category === target){
+                    card.style.display = 'block';
+
+                }else{
+                    card.style.display='none'
+                }
+            } );
+        });
+    });
+ });
+
+// validation du formulaire
+
+document.addEventListener('DOMContentLoaded', function(){
+    // recuperation des element
+    const form= document.getElementById('form');
+    const nom= document.getElementById('nom');
+     const prenom= document.getElementById('prenom');
+    const email= document.getElementById('email');
+
+    // recuperation des elements de messages erreur
+    const nomError= document.getElementById('nomError');
+    const prenomErrornom= document.getElementById('prenomError');
+     const emailError= document.getElementById('emailError');
+    const messageError= document.getElementById('messageError');
+
+    if(form){
+        form.addEventListener('submit', function(event){
+        let valid = true;
+        // reinitialisation des mess d'erreur à chaque tentative
+        document.getElementById('nomError').textContent='';
+         document.getElementById('prenomError').textContent='';
+          document.getElementById('emailError').textContent='';
+
+        //   validation du nom
+        if(nom.value.trim() == '')
+            document.getElementById('nomError').textContent='Le nom est requis.';
+            valid= false;
+
+        // validation du prenom
+         if(prenom.value.trim() == '')
+            document.getElementById('prenomError').textContent='Le prenom est requis.';
+            valid= false;
+
+        // validation de l'email
+         if(!email.value.includes('@')){
+            document.getElementById('emailError').textContent='email invalide.';
+            valid= false;
+         }
+
+         if(message.value.trim().length < 20){
+            document.getElementById('messageError').textContent='Le message doit contenir au moins 20 caracteres';
+         }
+
+        //  empeche la soumission du formulaire
+        if(!valid){
+            event.preventDefault();
+        }else{
+           alert('Inscription reussie')
+        }
+    });
+    };
+
+    
+});
+
