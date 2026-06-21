@@ -337,6 +337,19 @@ h4{
 
 
 /* SECTION TARIF */
+/* titre invisible pour les utilisateurs et lisible par le validateur */
+.visual{
+    /* sort l'element de la page */
+    position: absolute;
+    /*devient miniscule  */
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    /* masque */
+    overflow: hidden;
+    
+}
 .btn ,
 .btn_gratuit {
     border: 2px solid;
@@ -351,13 +364,22 @@ h4{
     border: 2px solid;
     border-radius: 8px;
     height: 350px;
+    background-color: #da9c9c;
+      
     
+}
+.carte-pro:hover{
+    box-shadow: 0 20px 40px rgba(79,70, 229, 0.12);
+    border-color: #444;
 }
 .carte-ese{
     border: 1px solid;
     border-radius: 8px;
     height: 300px;
     
+}
+ul{
+    list-style-type: none;
 }
 
 /* section contact */

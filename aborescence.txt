@@ -1,0 +1,48 @@
+Structure du dossier
+Le numéro de série du volume est 0000009D BA75:7C4A
+C:.
+¦   aborescence.txt
+¦   About.html
+¦   Contact.html
+¦   Freelances.html
+¦   index.html
+¦   Tarifs.html
+¦   
++---css
+¦   ¦   style.css
+¦   ¦   
+¦   +---js
+¦           .gitignore
+¦           main.js
+¦           README.md
+¦           
++---Docs
+¦       cisse_ndeye_sokhna.pptx
+¦       
++---images
+        Budget Friendly Outfits for 2 Men.jpg
+        Facebook Logo Icon Vector & Transparent PNG.jpg
+        Industrial 4_0 Cyber Physical Systems concept,Robot and human holding hand with handshake,Human and technology logo, Partnership with a robot.jpg
+        Office outfit inspo 2 .jpg
+        realest_ on TikTok.jpg
+        télécharger  2 (19).jpg
+        télécharger (10).jpg
+        télécharger (14).jpg
+        télécharger (15).jpg
+        télécharger (16).jpg
+        télécharger (18).jpg
+        télécharger (20).jpg
+        télécharger (21).jpg
+        télécharger (6).jpg
+        télécharger (7).jpg
+        télécharger (8).jpg
+        télécharger (9).jpg
+        télécharger 2 (11).jpg
+        télécharger 2 (12).jpg
+        télécharger 2 (13).jpg
+        télécharger 2 (17).jpg
+        télécharger.jpg
+        Valorous Hope for African Youth - Logo Design.jpg
+        Working From Home Motivation – Stay Focused, Balanced & Inspired.jpg
+        ß?????????????????????????.jpg
+        
